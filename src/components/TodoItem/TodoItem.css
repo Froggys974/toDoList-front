@@ -1,0 +1,45 @@
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 80vw;
+  }
+  
+  .todo-item.completed span {
+    text-decoration: line-through;
+    color: gray;
+  }
+  .todo-item.completed  {
+    background-color: rgba(109, 184, 109, 0.797);
+  }
+  .checkText input{
+    transform: scale(2); 
+    margin-right: 10px;
+  }
+  .todo-item span {
+    flex-grow: 1;
+    font-size: 1.2em; 
+    cursor: pointer;
+  }
+  
+  .todo-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .todo-item button:hover {
+    background-color: #c82333;
+  }
+
+  .buttonList{
+    display: flex ;
+    gap: 15px;
+  }
+  
