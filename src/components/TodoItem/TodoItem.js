@@ -1,10 +1,24 @@
 import React from 'react';
 import './TodoItem.css';
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
-function TodoItem({ todo, toggleComplete, deleteTodo }) {
+function TodoItem({todo, toggleComplete, deleteTodo }) {
+  const id= todo.id;
+  const { attributes, listeners, setNodeRef, transform, transition } =
+  useSortable({ id });
+  
+  const style = {
+    transition,
+    transform: CSS.Transform.toString(transform),
+  };
   return (
-    // {/* draganddrop */}
-    <div className={`todo-item ${todo.completed ? "completed" : ""}`}>
+    
+    <div ref={setNodeRef}
+         style={style}
+         {...attributes}
+         {...listeners}
+         className={`todo-item ${todo.completed ? "completed" : ""}`}>
       <label  className="checkText">
         <input
           type="checkbox"
